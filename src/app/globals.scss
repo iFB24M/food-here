@@ -6,20 +6,41 @@
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 html {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
 
+  --background-color: #fff;
   --foreground-color: #333;
+  --main-color: #333;
+
+  color: var(--main-color);
 }
 
 a {
   text-decoration: none;
-  color: inherit
+  color: inherit;
 }
 
 img {
   max-width: 100%;
+}
+
+strong {
+  font-weight: 500;
 }

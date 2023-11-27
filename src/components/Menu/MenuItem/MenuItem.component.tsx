@@ -1,18 +1,14 @@
 import { Card, Title3 } from '@/ui';
 import styles from './MenuItem.module.scss';
 import { MenuItemProps } from './MenuItem.props';
-import { Wordpress } from '@/services/Wordpress.service';
+import { WpImage } from '@/components/WpImage/WpImage.component';
 
-export const MenuItem = async (props: MenuItemProps) => {
-	const { data: image } = await Wordpress.getMediaById(props.imageId);
-
-	console.log(props.imageId);
-
+export const MenuItem = (props: MenuItemProps) => {
 	return (
-		<a href="">
+		<a href={`/catalog/${props.slug}`}>
 			<Card className={styles.body}>
 				<picture>
-					<img className={styles.image} src={image.guid.rendered} alt="Заголовок" />
+					<WpImage idValue={props.imageId} className={styles.image} alt={props.title} />
 				</picture>
 				<div className={styles.info}>
 					<Title3 className={styles.title}>{props.title}</Title3>

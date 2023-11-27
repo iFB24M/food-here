@@ -4,4 +4,8 @@
 	border-radius: 8px;
 	border: #eee 1px solid;
 	display: inline-block;
+
+	&.big {
+		padding: 14px 16px;
+	}
 }

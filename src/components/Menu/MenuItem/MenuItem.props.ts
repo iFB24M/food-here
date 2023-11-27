@@ -4,4 +4,5 @@ export interface MenuItemProps {
 	description: string
 	price: number
 	weight: number
+	slug: string
 }
