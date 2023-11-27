@@ -1,19 +1,21 @@
-"use client"
+'use client';
 
-import { Container } from "../Container/Container.component";
+import React from 'react';
+
+import { Container } from '../Container/Container.component';
 import { MenuItem } from './MenuItem/MenuItem.component';
 import styles from './Menu.module.scss';
-import { useQuery } from "@tanstack/react-query";
-import { Wordpress } from "@/services/Wordpress.service";
-import { Spinner } from "@/ui/Spinner/Spinner.component";
+import { useQuery } from '@tanstack/react-query';
+import { Wordpress } from '@/services/Wordpress.service';
+import { Spinner } from '@/ui/Spinner/Spinner.component';
 import { Card, Title3 } from '@/ui';
 
 export const Menu = () => {
-	const { isLoading, data, error } = useQuery({ queryKey: ['posts'], queryFn: Wordpress.getMenu })
-	const { isLoading: isCategoriesLoading, data: categories, isError: categoriesError } =
-		useQuery({ queryKey: ['categories'], queryFn: Wordpress.getMenuCategories })
+	const { isLoading, data, error } = useQuery({ queryKey: ['posts'], queryFn: Wordpress.getMenu });
+	const { data: categories } =
+		useQuery({ queryKey: ['categories'], queryFn: Wordpress.getMenuCategories });
 
-	if (error) return <>{error.message}</>
+	if (error) return <>{error.message}</>;
 	return (
 		<Container className={styles.container}>
 			<div className={styles.menu}>
@@ -37,5 +39,5 @@ export const Menu = () => {
 			</div>
 
 		</Container>
-	)
-}
+	);
+};

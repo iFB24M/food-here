@@ -1,3 +1,3 @@
 export interface MenuProps {
-	menu: "full"
+	menu: 'full'
 }

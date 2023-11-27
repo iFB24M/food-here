@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './Button.module.scss';
 import { ButtonProps } from './Button.props';
 
@@ -5,10 +7,10 @@ export const Button = ({ className, onClick, href, appearance, as, ...props }: B
 	const defaultProps = {
 		className: `${styles.button} ${styles[`button${appearance}`]} ${className}`,
 		...props
-	}
+	};
 
 	if (as === 'a')
-		return <a href={href} {...defaultProps}></a>
+		return <a href={href} {...defaultProps}></a>;
 	else
-		return <button onClick={onClick} {...defaultProps}></button>
-}
+		return <button onClick={onClick} {...defaultProps}></button>;
+};

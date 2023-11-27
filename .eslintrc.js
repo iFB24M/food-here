@@ -31,5 +31,9 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/prop-types": "off",
+        "quotes": [2, "single", { "avoidEscape": true }],
+        'jsx-quotes': [2, 'prefer-double'],
+        "semi": [2, "always"]
     }
 }

@@ -1,9 +1,10 @@
-import { Menu } from '@/components/Menu/Menu.component'
+import React from 'react';
+import { Menu } from '@/components/Menu/Menu.component';
 
 export default function Home() {
   return (
     <>
-      <Menu menu="full" />
+      <Menu />
     </>
-  )
+  );
 }

@@ -1,14 +1,16 @@
-"use client"
+'use client';
 
-import { Container } from "@/components/Container/Container.component";
-import { Wordpress } from "@/services/Wordpress.service";
-import { Spinner } from "@/ui/Spinner/Spinner.component";
-import { useQuery } from "@tanstack/react-query";
+import React from 'react';
+
+import { Container } from '@/components/Container/Container.component';
+import { Wordpress } from '@/services/Wordpress.service';
+import { Spinner } from '@/ui/Spinner/Spinner.component';
+import { useQuery } from '@tanstack/react-query';
 
 import styles from './page.module.scss';
 import { WpImage } from '../../../components/WpImage/WpImage.component';
-import { Button, Title3 } from "@/ui";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Button, Title3 } from '@/ui';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 const toggleState = (value: string, stateArray: [string, Dispatch<SetStateAction<string>>]) => {
 	const [state, setState] = stateArray;
@@ -16,7 +18,7 @@ const toggleState = (value: string, stateArray: [string, Dispatch<SetStateAction
 	console.log(state);
 	if (state) setState('');
 	else setState(value);
-}
+};
 
 const CatalogPage = (props: { params: { slug: string } }) => {
 	const { isLoading, data, error } =
@@ -25,14 +27,14 @@ const CatalogPage = (props: { params: { slug: string } }) => {
 	const [descriptionOpened, setDescriptionOpened] = useState('');
 
 	useEffect(() => {
-		console.log(document.querySelector(`.${styles.description}`))
-	}, [])
+		console.log(document.querySelector(`.${styles.description}`));
+	}, []);
 
 	const toggleDescription = () =>
 		toggleState(styles.opened, [descriptionOpened, setDescriptionOpened]);
 
-	if (isLoading) return <Spinner />
-	if (error) return <>{error.message}</>
+	if (isLoading) return (<Spinner />);
+	if (error) return (<>{error.message}</>);
 	if (data)
 		return (
 			<Container className={styles.container}>
@@ -49,8 +51,8 @@ const CatalogPage = (props: { params: { slug: string } }) => {
 					</div>
 				</div>
 			</Container>
-		)
-	return <>Ничего</>
-}
+		);
+	return <>Ничего</>;
+};
 
 export default CatalogPage;

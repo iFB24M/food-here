@@ -1,5 +1,5 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes } from 'react';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-	size?: 'small' | 'normal' | 'big'
+	size?: 'small' | 'normal' | 'big';
 }

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Card, Title3 } from '@/ui';
 import styles from './MenuItem.module.scss';
 import { MenuItemProps } from './MenuItem.props';
@@ -16,5 +18,5 @@ export const MenuItem = (props: MenuItemProps) => {
 				</div>
 			</Card>
 		</a>
-	)
-}
+	);
+};
