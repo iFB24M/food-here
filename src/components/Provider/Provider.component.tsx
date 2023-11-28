@@ -16,7 +16,9 @@ export const Provider = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			{children}
+			<>
+				{children}
+			</>
 		</QueryClientProvider>
 	);
 };
