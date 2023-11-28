@@ -9,6 +9,10 @@ import { Footer } from '@/components/Footer/Footer.component';
 import { Wordpress } from '@/services/Wordpress.service';
 import { Spinner } from '@/ui/Spinner/Spinner.component';
 
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ display: 'swap', subsets: ['cyrillic'] });
+
 export const generateMetadata = async (): Promise<Metadata> => {
   const { data: settings } = await Wordpress.getSettings();
   return {
@@ -23,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={montserrat.className}>
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </head>
