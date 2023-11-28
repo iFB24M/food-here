@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import './globals.scss';
 import { Provider } from '@/components/Provider/Provider.component';
 import { Header } from '@/components/Header/Header.component';
+import { Popup } from '@/ui/Popup/Popup.component';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,7 +24,7 @@ export default function RootLayout({
           <main className="main">
 
             {children}
-
+            <Popup />
           </main>
         </Provider>
       </body>

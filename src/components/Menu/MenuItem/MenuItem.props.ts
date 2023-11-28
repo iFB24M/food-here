@@ -5,4 +5,5 @@ export interface MenuItemProps {
 	price: number
 	weight: number
 	slug: string
+	id: number
 }

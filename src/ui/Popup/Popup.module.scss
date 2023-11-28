@@ -1,0 +1,21 @@
+.popup {
+	transition: transform .3s, left .3s;
+	position: fixed;
+	z-index: 9;
+
+	right: 16px;
+
+	bottom: 0;
+	transform: translateY(100%);
+
+	&.open {
+		bottom: 16px;
+		transform: translateY(0);
+	}
+}
+
+.popupBody {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}

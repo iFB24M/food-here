@@ -2,15 +2,22 @@
 
 import React from 'react';
 
-import { sendForm } from '@/app/createTodo';
-// import { AddToCartFormProps } from './AddToCartForm.props';
+import { createCartItem } from '@/app/createCartItem';
+import { Button } from '@/ui';
+import { AddToCartFormProps } from './AddToCartForm.props';
 
-export const AddToCartForm = (/*props: AddToCartFormProps*/) => {
+import { cookies } from 'next/headers';
 
-	'use server';
+export const AddToCartForm = (props: AddToCartFormProps) => {
 	return (
-		<form action={sendForm}>
-			<input type="text" />
+		<form action={createCartItem}>
+			<input style={{ display: 'none' }} readOnly type="text" name="item-id" value={props.id} />
+
+			<Button type="submit" appearance="primary" icon="shopping_cart">
+				{!cookies().has(`cart-item-${props.id}`) ? 'В корзину' : ''}
+				{cookies().has(`cart-item-${props.id}`) ? 'Удалить' : ''}
+			</Button>
+
 		</form>
 	);
 };

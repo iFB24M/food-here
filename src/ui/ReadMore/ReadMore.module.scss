@@ -1,0 +1,33 @@
+.description {
+	margin: 0;
+	padding: 0;
+
+	max-height: 160px;
+	overflow: hidden;
+
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 32px;
+		background-image: linear-gradient(to top, #fff, transparent);
+	}
+
+	&.opened {
+		max-height: initial;
+		margin-bottom: .7em;
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.toggleButton {
+
+	font-weight: 600;
+}

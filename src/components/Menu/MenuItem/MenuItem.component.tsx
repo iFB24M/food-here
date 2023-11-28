@@ -21,7 +21,7 @@ export const MenuItem = (props: MenuItemProps) => {
 					<Title3 className={styles.price}>{props.price} руб. <span>за {props.weight} гр.</span></Title3>
 				</div>
 			</a>
-			<AddToCartForm />
+			<AddToCartForm id={props.id} />
 		</Card>
 
 	);

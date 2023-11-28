@@ -7,5 +7,6 @@ export interface ButtonProps {
 	href?: string,
 	children: ReactNode,
 	onClick?: MouseEventHandler<HTMLButtonElement>;
-	icon?: string
+	icon?: string,
+	type?: 'submit' | 'button'
 }

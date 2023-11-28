@@ -1,3 +1,3 @@
 export interface AddToCartFormProps {
-	title: string
+	id: number
 }
