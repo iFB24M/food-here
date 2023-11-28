@@ -1,9 +1,11 @@
 'use server';
 
-import { sendForm } from '@/app/createTodo';
-import { AddToCartFormProps } from './AddToCartForm.props';
+import React from 'react';
 
-export const AddToCartForm = (props: AddToCartFormProps) => {
+import { sendForm } from '@/app/createTodo';
+// import { AddToCartFormProps } from './AddToCartForm.props';
+
+export const AddToCartForm = (/*props: AddToCartFormProps*/) => {
 
 	'use server';
 	return (
@@ -11,4 +13,4 @@ export const AddToCartForm = (props: AddToCartFormProps) => {
 			<input type="text" />
 		</form>
 	);
-}
+};

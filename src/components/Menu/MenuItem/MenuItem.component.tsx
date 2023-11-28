@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { Button, Card, Title3 } from '@/ui';
+import { Card, Title3 } from '@/ui';
 import styles from './MenuItem.module.scss';
 import { MenuItemProps } from './MenuItem.props';
 import { WpImage } from '@/components/WpImage/WpImage.component';
@@ -21,7 +21,7 @@ export const MenuItem = (props: MenuItemProps) => {
 					<Title3 className={styles.price}>{props.price} руб. <span>за {props.weight} гр.</span></Title3>
 				</div>
 			</a>
-			<AddToCartForm title="sdasd" />
+			<AddToCartForm />
 		</Card>
 
 	);

@@ -6,24 +6,24 @@ import { Container } from '../Container/Container.component';
 import { MenuItem } from './MenuItem/MenuItem.component';
 import styles from './Menu.module.scss';
 // import { useQuery } from '@tanstack/react-query';
-import { API, Wordpress } from '@/services/Wordpress.service';
-import { Spinner } from '@/ui/Spinner/Spinner.component';
+import { API/*, Wordpress*/ } from '@/services/Wordpress.service';
+// import { Spinner } from '@/ui/Spinner/Spinner.component';
 import { Card, Title3 } from '@/ui';
 import { IMenuItem } from '@/interfaces/MenuItem.interface';
 
 
 
 async function getData() {
-	const res = await fetch(`${API}/menu`)
+	const res = await fetch(`${API}/menu`);
 	// The return value is *not* serialized
 	// You can return Date, Map, Set, etc.
 
 	if (!res.ok) {
 		// This will activate the closest `error.js` Error Boundary
-		throw new Error('Failed to fetch data')
+		throw new Error('Failed to fetch data');
 	}
 
-	return res.json()
+	return res.json();
 }
 
 

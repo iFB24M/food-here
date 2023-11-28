@@ -2,11 +2,11 @@
 
 import React from 'react';
 import styles from './Logo.module.scss';
-import { Body1, Icon, Title2 } from '@/ui';
+import { Icon } from '@/ui';
 import { LogoProps } from './Logo.props';
-import { useQuery } from '@tanstack/react-query';
-import { Wordpress } from '@/services/Wordpress.service';
-import { Spinner } from '@/ui/Spinner/Spinner.component';
+// import { useQuery } from '@tanstack/react-query';
+// import { Wordpress } from '@/services/Wordpress.service';
+// import { Spinner } from '@/ui/Spinner/Spinner.component';
 
 export const Logo = ({ icon, ...props }: LogoProps) => {
 	// const { isLoading, data, error } = useQuery({ queryKey: ['settings'], queryFn: Wordpress.getSettings });
