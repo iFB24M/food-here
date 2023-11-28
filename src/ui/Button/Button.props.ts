@@ -6,5 +6,6 @@ export interface ButtonProps {
 	as?: 'button' | 'a',
 	href?: string,
 	children: ReactNode,
-	onClick?: MouseEventHandler<HTMLButtonElement>
+	onClick?: MouseEventHandler<HTMLButtonElement>;
+	icon?: string
 }

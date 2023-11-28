@@ -3,6 +3,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import './globals.scss';
 import { Provider } from '@/components/Provider/Provider.component';
+import { Header } from '@/components/Header/Header.component';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,11 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="main">
-          <Provider>
+        <Provider>
+          <Header></Header>
+          <main className="main">
+
             {children}
-          </Provider>
-        </main>
+
+          </main>
+        </Provider>
       </body>
     </html>
   );

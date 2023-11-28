@@ -1,0 +1,21 @@
+@use "@/scss/breakpoints";
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 24px 64px;
+
+	@media (max-width: breakpoints.$tablet) {
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.menuList {
+	display: flex;
+	list-style: none;
+	gap: 32px;
+	flex-wrap: wrap;
+}

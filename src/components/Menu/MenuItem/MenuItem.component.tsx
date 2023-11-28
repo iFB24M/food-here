@@ -7,7 +7,7 @@ import { WpImage } from '@/components/WpImage/WpImage.component';
 
 export const MenuItem = (props: MenuItemProps) => {
 	return (
-		<a href={`/catalog/${props.slug}`}>
+		<a href={`/catalog/item/${props.slug}`}>
 			<Card className={styles.body}>
 				<picture>
 					<WpImage idValue={props.imageId} className={styles.image} alt={props.title} />

@@ -8,7 +8,7 @@ import { Spinner } from '@/ui/Spinner/Spinner.component';
 import { useQuery } from '@tanstack/react-query';
 
 import styles from './page.module.scss';
-import { WpImage } from '../../../components/WpImage/WpImage.component';
+import { WpImage } from '../../../../components/WpImage/WpImage.component';
 import { Button, Title3 } from '@/ui';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 

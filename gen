@@ -1,0 +1,13 @@
+import fs from 'fs';
+
+
+if (process.argv[2] && process.argv[3]) {
+	if (process.argv[2] === 'component') {
+		if (!fs.existsSync(`src/components/${process.argv[3]}`)) fs.mkdir(`src/components/${process.argv[3]}`, (cb) => console.log(cb));
+
+		fs.open(`src/components/${process.argv[3]}/${process.argv[3]}.component.tsx`, 'w', (cb) => console.log(cb));
+		fs.open(`src/components/${process.argv[3]}/${process.argv[3]}.module.scss`, 'w', (cb) => console.log(cb));
+		fs.writeFileSync(`src/components/${process.argv[3]}/${process.argv[3]}.component.tsx`, `import React from \'react\';\nimport styles from \'./${process.argv[3]}.module.scss\';\n\nexport const Logo = () => {\n\treturn (<></>);\n};`);
+		fs.writeFileSync(`src/components/${process.argv[3]}/${process.argv[3]}.module.scss`, '');
+	}
+}
