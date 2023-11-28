@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import type { Metadata } from 'next';
 import './globals.scss';
@@ -7,6 +7,7 @@ import { Header } from '@/components/Header/Header.component';
 import { Popup } from '@/ui/Popup/Popup.component';
 import { Footer } from '@/components/Footer/Footer.component';
 import { Wordpress } from '@/services/Wordpress.service';
+import { Spinner } from '@/ui/Spinner/Spinner.component';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { data: settings } = await Wordpress.getSettings();
@@ -24,17 +25,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider>
-          <div className="wrapper">
-            <Header></Header>
-            <main className="main">
+        <Suspense fallback={<Spinner />}>
+          <Provider>
+            <div className="wrapper">
+              <Header></Header>
+              <main className="main">
 
-              {children}
-              <Popup />
-            </main>
-            <Footer></Footer>
-          </div>
-        </Provider>
+                {children}
+                <Popup />
+              </main>
+              <Footer></Footer>
+            </div>
+          </Provider>
+        </Suspense>
       </body>
     </html>
   );
