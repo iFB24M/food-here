@@ -11,7 +11,13 @@ export const Wordpress = {
 	getMenu: () => axios.get<IMenuItem[]>(`${API}/menu`),
 	getMenuItemBySlug: (slug: string) => axios.get<IMenuItem[]>(`${API}/menu?slug=${slug}`),
 	getMenuItemById: (id: number) => axios.get<IMenuItem>(`${API}/menu/${id}`),
+	getMenuItemByCategory: (category: number) => axios.get<IMenuItem[]>(`${API}/menu?menu-category=${category}`),
+
 	getMediaById: (id: number) => axios.get<IMedia>(`${API}/media/${id}`),
+
 	getMenuCategories: () => axios.get<ICategory[]>(`${API}/menu-category`),
+	getMenuCategoryBySlug: (slug: string) => axios.get<ICategory[]>(`${API}/menu-category?slug=${slug}`),
+	getMenuCategoryById: (id: number) => axios.get<ICategory[]>(`${API}/menu-category/${id}`),
+
 	getSettings: () => axios.get<ISettings>('https://fb24m.ru/food-here/wp-json/')
 };

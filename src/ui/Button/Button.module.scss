@@ -59,6 +59,11 @@
 	}
 }
 
+.buttonlink {
+	border: none;
+	// padding: 0;
+}
+
 .button:has(.icon) {
 	display: flex;
 	align-items: center;

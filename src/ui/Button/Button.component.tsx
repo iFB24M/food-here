@@ -13,7 +13,7 @@ export const Button = ({ children, className, onClick, href, appearance, as, ico
 	const iconEl = icon ? <Icon className={styles.icon} icon={icon} /> : '';
 
 	if (as === 'a')
-		return <a href={href} {...defaultProps}></a>;
+		return <a href={href} {...defaultProps}><>{iconEl} {children}</></a>;
 	else
 		return <button onClick={onClick} {...defaultProps}><>{iconEl} {children}</></button>;
 };

@@ -7,7 +7,7 @@ import Image from 'next/image';
 // import { Wordpress } from '@/services/Wordpress.service';
 // import { Spinner } from '@/ui/Spinner/Spinner.component';
 
-export const WpImage = async ({ idValue, className }: WpImageProps) => {
+export const WpImage = async ({ idValue, alt, className }: WpImageProps) => {
 	// const { isLoading, data, error } =
 	// 	useQuery({ queryKey: [`image-${idValue}`], queryFn: () => Wordpress.getMediaById(idValue) });
 
@@ -19,7 +19,13 @@ export const WpImage = async ({ idValue, className }: WpImageProps) => {
 		const { data: image } = await Wordpress.getMediaById(idValue);
 
 		return <>
-			<Image className={className} layout="responsive" src={image.guid.rendered} alt="" width={10000} height={10000} />
+			<Image
+				className={className}
+				layout="responsive"
+				src={image.guid.rendered}
+				alt={alt}
+				width={10000}
+				height={10000} />
 		</>;
 	}
 	else {

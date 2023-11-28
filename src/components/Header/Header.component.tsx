@@ -3,10 +3,11 @@ import { Container } from '../Container/Container.component';
 import styles from './Header.module.scss';
 import { Logo } from '../Logo/Logo.component';
 import { Button } from '@/ui';
+import { cookies } from 'next/headers';
 
 export const Header = () => {
 	return (
-		<Container className={styles.header}>
+		<Container className={`${styles.header} header`}>
 			<Logo className={styles.logo} icon="lunch_dining" />
 			<div className={styles.menu}>
 				<ul className={styles.menuList}>
@@ -15,7 +16,7 @@ export const Header = () => {
 					<li className={styles.menuItem}><a href="#" className={styles.menuLink}>Доставка</a></li>
 				</ul>
 			</div>
-			<Button icon="shopping_cart" appearance="primary">Кнопка</Button>
+			<Button as="a" href="/cart" icon="shopping_cart" appearance="primary">Корзина ({cookies().getAll().filter((item) => item.name.includes('cart-item-')).length})</Button>
 		</Container>
 	);
 };
