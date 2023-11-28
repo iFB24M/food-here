@@ -10,11 +10,12 @@ import { API/*, Wordpress*/ } from '@/services/Wordpress.service';
 // import { Spinner } from '@/ui/Spinner/Spinner.component';
 import { Card, Title3 } from '@/ui';
 import { IMenuItem } from '@/interfaces/MenuItem.interface';
+import { GetServerSideProps } from 'next';
 
 
 
 async function getData() {
-	const res = await fetch(`${API}/menu`);
+	const res = await fetch(`${API}/menu`, { cache: 'no-cache' });
 	// The return value is *not* serialized
 	// You can return Date, Map, Set, etc.
 
@@ -25,6 +26,14 @@ async function getData() {
 
 	return res.json();
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+	const menuItems: IMenuItem[] = await getData();
+
+	return {
+		props: { menuItems }
+	};
+};
 
 
 export const Menu = async () => {
