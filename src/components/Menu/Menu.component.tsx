@@ -31,7 +31,7 @@ export const Menu = async () => {
 	// const { isLoading, data, error } = useQuery({ queryKey: ['posts'], queryFn: Wordpress.getMenu });
 	// const { data: categories } = useQuery({ queryKey: ['categories'], queryFn: Wordpress.getMenuCategories });
 
-	const data = await getData();
+	const data: IMenuItem[] = await getData();
 
 	// if (error) return <>{error.message}</>;
 	return (
