@@ -9,6 +9,7 @@ import { Wordpress } from '@/services/Wordpress.service';
 import { Card, Title3 } from '@/ui';
 import { GetServerSideProps } from 'next';
 import { IMenuItem } from '@/interfaces/MenuItem.interface';
+import Link from 'next/link';
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	const menuItems = await Wordpress.getMenu();
@@ -31,7 +32,7 @@ export const Menu = async ({ menu }: { menu: IMenuItem[] }) => {
 				<Title3>Категории</Title3>
 				<Card size="big">
 					<ul className={styles.categories}>
-						{categories ? categories.map((item) => <li key={item.id}><a href={`/catalog/${item.slug}`}>{item.name}</a></li>) : ''}
+						{categories ? categories.map((item) => <li key={item.id}><Link href={`/catalog/${item.slug}`}>{item.name}</Link></li>) : ''}
 					</ul>
 				</Card>
 			</div>

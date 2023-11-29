@@ -21,11 +21,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
   };
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={montserrat.className}>
       <head>
@@ -35,13 +31,13 @@ export default function RootLayout({
         <Suspense fallback={<Spinner />}>
           <Provider>
             <div className="wrapper">
-              <Header></Header>
+              <Header />
               <main className="main">
 
                 {children}
                 <Popup />
               </main>
-              <Footer></Footer>
+              <Footer />
             </div>
           </Provider>
         </Suspense>

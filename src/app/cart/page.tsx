@@ -7,6 +7,7 @@ import { CartItem } from '@/components/Cart/CartItem/CartItem.component';
 import { Container } from '@/components/Container/Container.component';
 
 import styles from './page.module.scss';
+import { Title3 } from '@/ui';
 
 const Cart = () => {
 
@@ -14,7 +15,12 @@ const Cart = () => {
 
 	return (
 		<Container className={styles.cart}>
-			{items.map((item) => <CartItem name={item.name} count={item.value} key={item.name} />)}
+			<div className={styles.goods}>
+				{items.map((item) => <CartItem name={item.name} count={item.value} key={item.name} />)}
+			</div>
+			<div className={styles.result}>
+				<Title3>Итого</Title3>
+			</div>
 		</Container>
 	);
 };
