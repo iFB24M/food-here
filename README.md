@@ -1,5 +1,6 @@
 # Food Here
 
+<!--
 <div class="banners">
 	<img src="https://img.shields.io/badge/SCSS-cc6699">
 	<img src="https://img.shields.io/badge/WordPress-3858E9">
@@ -8,7 +9,23 @@
 	<img src="https://img.shields.io/badge/React-4fafc9">
 	<img src="https://img.shields.io/badge/Next.js-000000">
 	<img src="https://img.shields.io/badge/Git-f64d27">
-</div>
+</div> -->
+
+```mermaid
+flowchart TD
+	STACK[Technologies Stack]
+	STACK --> TS[TypeScript];
+	STACK --> SCSS[SCSS];
+	TS --> ESLINT[ESLint];
+	TS --> NEXT[Next.js];
+	NEXT --> REACT[React.js];
+	NEXT --> AXIOS[Axios];
+	TS --> MODULES[Modules];
+	SCSS --> MODULES[Modules];
+	STACK --> WP[WordPress];
+	WP --> ACF[ACF];
+	WP --> API[Rest API];
+```
 
 <img class="image" src="https://fb24m.ru/food-here/wp-content/uploads/2023/11/snimok-ekrana-ot-2023-11-30-20-18-55.png">
 
@@ -49,12 +66,3 @@ Wordpress вместе с основным плагином ACF играют р�
 <img class="image" alt="Редактор настроек позиции меню" src="https://fb24m.ru/food-here/wp-content/uploads/2023/11/snimok-ekrana-ot-2023-11-30-20-13-02.png">
 </div>
 </div>
-
-```mermaid
-flowchart TD
-	A[hello] --> B(Hello);
-	B -- yes --> C[do not deploy];
-	B -- no --> d[Run depluy.sh to deploy];
-	C ----> E[uraa];
-	D ----> E[uraa];
-```
