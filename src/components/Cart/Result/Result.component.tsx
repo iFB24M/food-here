@@ -3,17 +3,18 @@
 
 import { Wordpress } from '@/services/Wordpress.service';
 import { Card, Icon, Title3, Button } from '@/ui';
-import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
 import React from 'react';
 import { savePrice } from './savePrice';
 import styles from './Total.module.scss';
+import { getCart } from '@/functions/getCart.function';
 
 const sum = async (a: Promise<number>, b: Promise<number>) => (await a) + (await b);
 
-const items = cookies().getAll().filter((item) => item.name.includes('cart-item-'));
+// const items = cookies().getAll().filter((item) => item.name.includes('cart-item-'));
 
-const getParam = (param: 'price' | 'weight') =>
-	items.map((item) => {
+const getParam = async (param: 'price' | 'weight') =>
+	(await getCart()).map((item) => {
 		return Wordpress.getMenuItemById(+item.name.split('-')[2]).then(product => product.data.acf[param]);
 	}).reduce(sum);
 

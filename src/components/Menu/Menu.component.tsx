@@ -21,10 +21,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 
 export const Menu = async ({ menu }: { menu: IMenuItem[] }) => {
-
 	const { data: categories } = await Wordpress.getMenuCategories();
-
-	console.log(menu);
 
 	return (
 		<Container className={styles.container}>
