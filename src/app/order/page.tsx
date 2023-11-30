@@ -8,6 +8,7 @@ import { SelectItem } from '@/ui/SelectItem/SelectItem.component';
 import { Wordpress } from '@/services/Wordpress.service';
 import styles from './page.module.scss';
 import { Telegram } from '@/services/Telegram.service';
+import { cookies } from 'next/headers';
 
 export const Order = async () => {
 	const { data: cities } = await Wordpress.getDistricts();
@@ -18,7 +19,16 @@ export const Order = async () => {
 		Telegram.sendOrder(`Заказ с сайта Food Here. 
 		Улица: ${formData.get('street')}, дом: ${formData.get('house')}, подъезд: ${formData.get('entrance')}, этаж: ${formData.get('floor')}. 
 		Имя: ${formData.get('contact-name')}, телефон: ${formData.get('phone')}`);
-		Telegram.sendOrder('Сумма: скора');
+
+		const goods = cookies().getAll().filter((item) => item.name.includes('cart-item'));
+
+		goods.forEach(async (goodData) => {
+			Wordpress.getMenuItemById(+goodData.name.split('-')[2]).then(({ data }) => {
+				console.log(data);
+				Telegram.sendOrder(`(${data.id}) ${data.title.rendered} - ${data.acf.price} руб.`);
+			});
+
+		});
 	};
 
 	return (

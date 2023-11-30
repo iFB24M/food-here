@@ -1,5 +1,14 @@
 .goods {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.cartItem {
+	flex-direction: row !important;
+}
+
+.title {
+	margin-bottom: 16px;
 }

@@ -8,13 +8,15 @@ import { Container } from '@/components/Container/Container.component';
 
 import styles from './page.module.scss';
 import { Result } from '@/components/Cart/Result/Result.component';
+import { Title2 } from '@/ui';
 
 const Cart = () => {
 
 	const items = cookies().getAll().filter((item) => item.name.includes('cart-item-'));
 
 	return (
-		<Container className={styles.cart}>
+		<Container>
+			<Title2 className={styles.title}>Корзина</Title2>
 			<div className={styles.goods}>
 				{items.map((item) => <CartItem className={styles.cartItem} name={item.name} count={item.value} key={item.name} />)}
 			</div>
