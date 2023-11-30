@@ -9,8 +9,9 @@ import { Wordpress } from '@/services/Wordpress.service';
 import styles from './page.module.scss';
 import { Telegram } from '@/services/Telegram.service';
 import { cookies } from 'next/headers';
+import { NextPage } from 'next';
 
-export const Order = async () => {
+export const Order: NextPage = async () => {
 	const { data: cities } = await Wordpress.getDistricts();
 
 	const submitOrder = async (formData: FormData) => {
@@ -31,7 +32,7 @@ export const Order = async () => {
 		});
 	};
 
-	return (
+	return (<>
 		<Container>
 			<form action={submitOrder} className={styles.wrapper}>
 				<Title2>Оформление заказа</Title2>
@@ -85,6 +86,7 @@ export const Order = async () => {
 				<Body1>Оплата будет совершена при получении</Body1>
 			</form>
 		</Container>
+	</>
 	);
 };
 
