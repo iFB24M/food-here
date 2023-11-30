@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Food Here
 
-## Getting Started
+<div class="banners">
+	<img src="https://img.shields.io/badge/SCSS-cc6699">
+	<img src="https://img.shields.io/badge/WordPress-3858E9">
+	<img src="https://img.shields.io/badge/TypeScript-2d79c7">
+	<img src="https://img.shields.io/badge/ESLint-4B32C3">
+	<img src="https://img.shields.io/badge/React-4fafc9">
+	<img src="https://img.shields.io/badge/Next.js-000000">
+	<img src="https://img.shields.io/badge/Git-f64d27">
+</div>
 
-First, run the development server:
+<img class="image" src="https://fb24m.ru/food-here/wp-content/uploads/2023/11/snimok-ekrana-ot-2023-11-30-20-18-55.png">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tl;dr
+
+[Перейти на сайт](https://food.fb24m.ru)
+
+[Админ-панель (логин и пароль - admin1)](https://fb24m.ru/food-here/wp-admin)
+
+[Телеграм чат, куда поступают заказы](https://t.me/food_here)
+
+Food Here - полностью рабочий сайт для заказа еды, написаный на Next.js с использованием WordPress и SCSS. Для поддержки стиля и надежности кода используются ESLint и TypeScript.
+
+Использовано крайне мало компонентов с клиенстким рендерингом - страницы генерируются на сервере, а контент на них можно менять через админ-панель.
+
+## Безопасность
+
+Все токены и ключи доступа хранятся на сервере в зашифрованном виде. При заказе стоимость пересчитывается автоматически, чтобы не допустить ошибки. Для хранения данных используются Cookie.
+
+## Wordpress
+
+Wordpress вместе с основным плагином ACF играют роль бекенда сайта, через админ-панель можно менять товары и регионы для доставки, а также добавлять новые (вы можете сами добавить что угодно через панель по ссылке выше)
+
+<style>
+	.image {
+		width:100%;
+		border-radius: 8px;
+	}
+	.banners{
+		margin-bottom: 16px;
+	}
+</style>
+<div style="display:flex;align-items: flex-start;gap:8px">
+<div style="flex-basis:50%;">
+<img class="image" alt="Редактор позиции меню" src="https://fb24m.ru/food-here/wp-content/uploads/2023/11/snimok-ekrana-ot-2023-11-30-20-12-45.png">
+</div>
+<div style="flex-basis:50%;">
+<img class="image" alt="Редактор настроек позиции меню" src="https://fb24m.ru/food-here/wp-content/uploads/2023/11/snimok-ekrana-ot-2023-11-30-20-13-02.png">
+</div>
+</div>
+
+```mermaid
+flowchart TD
+	A[hello] --> B(Hello);
+	B -- yes --> C[do not deploy];
+	B -- no --> d[Run depluy.sh to deploy];
+	C ----> E[uraa];
+	D ----> E[uraa];
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

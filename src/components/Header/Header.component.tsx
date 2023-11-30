@@ -13,8 +13,8 @@ export const Header = () => {
 			<div className={styles.menu}>
 				<ul className={styles.menuList}>
 					<li className={styles.menuItem}><Link href="#" className={styles.menuLink}>О нас</Link></li>
-					<li className={styles.menuItem}><Link href="#" className={styles.menuLink}>Каталог</Link></li>
-					<li className={styles.menuItem}><Link href="#" className={styles.menuLink}>Доставка</Link></li>
+					<li className={styles.menuItem}><Link href="/" className={styles.menuLink}>Каталог</Link></li>
+					<li className={styles.menuItem}><Link href="/delivery" className={styles.menuLink}>Доставка</Link></li>
 				</ul>
 			</div>
 			<Button as="a" href="/cart" icon="shopping_cart" appearance="primary">Корзина ({cookies().getAll().filter((item) => item.name.includes('cart-item-')).length})</Button>

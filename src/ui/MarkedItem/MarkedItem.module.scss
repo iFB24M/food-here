@@ -1,0 +1,15 @@
+.listItem {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: 8px;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		width: 4px;
+		height: 4px;
+		background-color: var(--foreground-color);
+		border-radius: 8px;
+	}
+}

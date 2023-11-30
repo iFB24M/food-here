@@ -13,4 +13,10 @@ if (path && type && name) {
 		fs.writeFileSync(`${path}/${name}/${name}.component.tsx`, `import React from 'react';\nimport styles from './${name}.module.scss';\n\nexport const ${name} = () => {\n\treturn (<></>);\n};`);
 		fs.writeFileSync(`${path}/${name}/${name}.module.scss`, '');
 	}
+	if (type === 'props') {
+		if (!fs.existsSync(`${path}/${name}`)) fs.mkdir(`${path}/${name}`, (cb) => console.log(cb));
+
+		fs.writeFileSync(`${path}/${name}/${name}.props.ts`, `import { HTMLAttributes } from 'react';\n\nexport interface ${name}Props extends HTMLAttributes<HTMLDivElement> {}`);
+
+	}
 }

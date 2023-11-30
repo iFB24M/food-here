@@ -1,4 +1,13 @@
-.subtitle {
-	margin-bottom: 8px;
-	margin-top: 16px;
+.title {
+	margin-bottom: 16px;
+
+	&:not(:first-child) {
+		margin-top: 16px;
+	}
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
