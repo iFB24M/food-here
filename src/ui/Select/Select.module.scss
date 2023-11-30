@@ -1,0 +1,58 @@
+.select {
+	max-width: 320px;
+	width: 100%;
+	position: relative;
+	user-select: none;
+
+	&:has(.opened) {
+		.preview {
+			border-bottom-color: var(--main-color);
+		}
+	}
+}
+
+.card {
+	width: 100%;
+}
+
+.preview {
+	width: 100%;
+	cursor: pointer;
+	border-bottom-width: 2px;
+}
+
+.list {
+	display: none;
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+	transform: translateY(100%);
+
+	&.opened {
+		display: block;
+	}
+}
+
+.item {
+	padding: 8px;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	cursor: pointer;
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--main-color);
+			border-radius: 8px;
+			color: var(--background-color);
+		}
+	}
+
+	&:active {
+		background-color: var(--main-color);
+		border-radius: 8px;
+		color: var(--background-color);
+	}
+}

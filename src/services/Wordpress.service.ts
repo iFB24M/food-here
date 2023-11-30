@@ -1,4 +1,5 @@
 import { ICategory } from '@/interfaces/Category.interface';
+import { IDistrict } from '@/interfaces/District.interface';
 import { IMedia } from '@/interfaces/Media.interface';
 import { IMenuItem } from '@/interfaces/MenuItem.interface';
 import { ISettings } from '@/interfaces/Settings.interface';
@@ -18,6 +19,10 @@ export const Wordpress = {
 	getMenuCategories: () => axios.get<ICategory[]>(`${API}/menu-category`),
 	getMenuCategoryBySlug: (slug: string) => axios.get<ICategory[]>(`${API}/menu-category?slug=${slug}`),
 	getMenuCategoryById: (id: number) => axios.get<ICategory[]>(`${API}/menu-category/${id}`),
+
+	getDistricts: () => axios.get<IDistrict[]>(`${API}/districts`),
+
+	getFileBySlug: (slug: string) => axios.get<{ content: { rendered: string } }[]>(`${API}/files?slug=${slug}`),
 
 	getSettings: () => axios.get<ISettings>('https://fb24m.ru/food-here/wp-json/')
 };

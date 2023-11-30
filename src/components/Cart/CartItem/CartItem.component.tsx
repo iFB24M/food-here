@@ -15,7 +15,7 @@ export const CartItem = async (props: CartItemProps) => {
 
 	if (data)
 		return (
-			<Card className={styles.wrapper}>
+			<Card className={`${styles.wrapper} ${props.className}`}>
 				<a href={`/catalog/item/${data.slug}`} className={styles.link}>
 					<WpImage className={styles.image} idValue={data.featured_media} alt="" />
 					<Body1 className={styles.title}>{data.title.rendered}</Body1>

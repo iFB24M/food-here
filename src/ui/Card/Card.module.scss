@@ -3,7 +3,8 @@
 	padding: 8px;
 	border-radius: 8px;
 	border: #eee 1px solid;
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 
 	&.big {
 		padding: 14px 16px;
